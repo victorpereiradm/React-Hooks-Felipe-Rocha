@@ -46,7 +46,7 @@ const UseEffectExample = () => {
         <button onClick={() => changeResourceType('todos')}>Todos</button>
       </div>
       {items.map((item) => {
-        return <div key={item.id}>{item.title}</div>
+        return <div key={item.id}>{item.title || item.body}</div>
       })}
     </div>
   );

@@ -1,16 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-// import UseStateExample from './UseStateExample'
-// import UseEffectExample from './UseEffectExample'
-// import UseRefExample from './UseRefExample'
-import UseReducer from './UseReducer';
+import App from './App';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <UseStateExample />
-    <UseEffectExample />
-    <UseRefExample /> */}
-    <UseReducer />
+    <App />
   </StrictMode>,
 );

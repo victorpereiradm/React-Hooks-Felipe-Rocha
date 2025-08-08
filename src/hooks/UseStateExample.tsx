@@ -3,7 +3,7 @@ import { useState } from 'react';
 const UseStateExample = () => {
   const [state, setState] = useState({
     count: 0,
-    theme: 'theme',
+    theme: '',
   });
 
   const incrementState = (): void => {
@@ -15,8 +15,8 @@ const UseStateExample = () => {
 
   return (
     <div>
-      <h2>Tema: {state.theme}</h2>
-      <h2>Contagem: {state.count}</h2>
+      <h3>Tema: {state.theme}</h3>
+      <h3>Contagem: {state.count}</h3>
       <button onClick={incrementState}>Incrementar</button>
     </div>
   )

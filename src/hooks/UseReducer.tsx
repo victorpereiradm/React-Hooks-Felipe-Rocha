@@ -26,6 +26,7 @@ const UseReducer = () => {
   const [state, dispatch] = useReducer(reducer, { tasks: [] });
 
   const completedTasksCount = state.tasks.filter(task => task.isCompleted).length;
+  const incompleteTasksCount = state.tasks.filter(task => !task.isCompleted).length;
 
   return (
     <div>
@@ -35,10 +36,11 @@ const UseReducer = () => {
           setInputValue('');
         }}>Adicionar</button>
 
-        <p>Tarefas concluídas: {completedTasksCount}</p>
+        <p style={{ marginTop: '10px', color: 'yellow' }}>Tarefas incompletas: {incompleteTasksCount}</p>
+        <p style={{ marginTop: '10px', color: 'green' }}>Tarefas concluídas: {completedTasksCount}</p>
 
         {state.tasks.map((task, index) => (
-            <p key={index} onClick={() => dispatch({ type: 'toggle-task', payload: index })} style={{ color: task.isCompleted ? 'green' : 'white', cursor: 'pointer' }}>{task.name}</p>
+            <p key={index} onClick={() => dispatch({ type: 'toggle-task', payload: index })} style={{ color: task.isCompleted ? 'green' : 'yellow', cursor: 'pointer' }}>{task.name}</p>
         ))}
     </div>
   );

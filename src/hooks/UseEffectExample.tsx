@@ -41,8 +41,10 @@ const UseEffectExample = () => {
 
   return (
     <div>
-      <h2>{resourceType}</h2>
+      {resourceType ? <h3>{resourceType}</h3> : <h3>Selecione um tipo abaixo 👇</h3>}
+
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+
         <button onClick={() => changeResourceType('Posts')}>Posts</button>
         <button onClick={() => changeResourceType('Comments')}>Comments</button>
         <button onClick={() => changeResourceType('Todos')}>Todos</button>

@@ -8,7 +8,7 @@ const UseStateExample = () => {
 
   const incrementState = (): void => {
     setState((prevState) => ({
-      theme: `theme-${Math.floor(Math.random() * 100)}`,
+      theme: `theme_${Math.floor(Math.random() * 100)}`,
       count: prevState.count + 1,
     }));
   }

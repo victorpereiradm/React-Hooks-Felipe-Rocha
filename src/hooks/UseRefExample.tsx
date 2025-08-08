@@ -16,7 +16,7 @@ const UseRefExample = () => {
 
   return (
     <div>
-      <input ref={inputRef} value={name} onChange={(e) => setName(e.target.value)} />
+      <input ref={inputRef} value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite seu nome" />
       <p>Hello! My name is {name}</p>
       <p>My name was {previousName.current}</p>
       <button onClick={focusInput}>Focus</button>

@@ -8,7 +8,7 @@ const UseEffectExample = () => {
     title?: string;
     body: string;
   }[]>([]);
-  const [resourceType, setResourceType] = useState('posts');
+  const [resourceType, setResourceType] = useState('');
 
   const changeResourceType = (resourceType: string): void => {
     setResourceType(resourceType);
@@ -16,6 +16,8 @@ const UseEffectExample = () => {
 
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
+      if (!resourceType) return;
+
       const response = await axios.get(`https://jsonplaceholder.typicode.com/${resourceType}`) as AxiosResponse<{
         userId: number;
         id: number;
@@ -39,11 +41,11 @@ const UseEffectExample = () => {
 
   return (
     <div>
-      <h1>{resourceType}</h1>
+      <h2>{resourceType}</h2>
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <button onClick={() => changeResourceType('posts')}>Posts</button>
-        <button onClick={() => changeResourceType('comments')}>Comments</button>
-        <button onClick={() => changeResourceType('todos')}>Todos</button>
+        <button onClick={() => changeResourceType('Posts')}>Posts</button>
+        <button onClick={() => changeResourceType('Comments')}>Comments</button>
+        <button onClick={() => changeResourceType('Todos')}>Todos</button>
       </div>
       {items.map((item) => {
         return <div key={item.id}>{item.title || item.body}</div>

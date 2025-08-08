@@ -30,7 +30,7 @@ const UseReducer = () => {
   return (
     <div>
         <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value) } placeholder="Adicione uma tarefa" />
-        <button onClick={() => {
+        <button style={{ marginLeft: '10px' }} onClick={() => {
           dispatch({ type: 'add-task', payload: inputValue });
           setInputValue('');
         }}>Adicionar</button>
